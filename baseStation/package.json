@@ -1,0 +1,9 @@
+{
+  "name": "Radiation-Monitor-Network Base Station",
+  "version": "0.0.1",
+  "description": "Base Station for Network",
+  "dependencies": {
+    "express": "4.3.1",
+    "socket.io": "1.0.2",
+  }
+}

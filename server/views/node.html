@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <title></title>
+      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+      <script src="/socket.io/socket.io.js"></script>
+  </head>
+  <body>
+    <h1 id="Title" style="color:black"><%= title %>!</h1>
+    <p>asgdjyu,yimbsdvasgj,mhnfbdvascghjtmhf bdvafghetjmfhbc vxbdghjtdgmcvnxbdhngxb</p>
+
+    <script>
+      console.log("monkeys");
+
+// checks server interaction
+      var socket = io();
+      socket.on('connected', function(msg){
+        if(msg===true){
+          socket.emit('login',{user:"client"});
+        }
+      });
+      socket.on('yourid', function(msg){
+        socketid=msg;
+        draw();
+      });
+
+      socket.on('results', function(msg){
+        results=msg;
+        console.log('done');
+      });
+    </script>
+  </body>
+</html>
