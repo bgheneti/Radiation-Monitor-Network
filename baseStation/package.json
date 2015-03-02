@@ -1,9 +1,11 @@
 {
-  "name": "Radiation-Monitor-Network Base Station",
+  "name": "Radiation-Monitor-Network-Base-Station",
   "version": "0.0.1",
   "description": "Base Station for Network",
   "dependencies": {
     "express": "4.3.1",
     "socket.io": "1.0.2",
+    "serialport": "https://github.com/voodootikigod/node-serialport/tarball/master",
+    "svd-xbee": "x.x.x"
   }
 }
