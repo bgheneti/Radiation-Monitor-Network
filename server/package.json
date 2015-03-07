@@ -1,5 +1,5 @@
 {
-  "name": "Radiation-Monitor-Network Server",
+  "name": "Radiation-Monitor-Network-Server",
   "version": "0.0.1",
   "description": "remote, convenient and safe monitoring of radiation levels in areas with nuclear disasters using a mesh network of sensor cubes",
   "dependencies": {

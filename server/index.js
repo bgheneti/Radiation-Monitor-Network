@@ -4,7 +4,7 @@
 
 //port
 var port=1600;
-
+var cubes= {};
 //MONITOR BASE TO CLIENT SERVER
 var express = require('express');
 var app = express();
@@ -22,7 +22,7 @@ console.log('party');
 //adds valid clients to group for mail posting updates
 io.on('connection', function(socket){
   console.log("connected");
-  socket.emit('connected',true);
+  socket.emit('data',cubes);
   socket.on('login',function(msg){
       if(msg.user==='base'){
         socket.join('bases');
@@ -35,6 +35,10 @@ io.on('connection', function(socket){
       else{
         socket.emit('login',false);
       }
+  });
+  socket.on('nodeData',function(data){
+    cubes[data.node]=data.temperature;
+    console.log(cubes);
   });
 });
 http.listen(port, function(){
