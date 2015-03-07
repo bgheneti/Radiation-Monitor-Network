@@ -6,17 +6,17 @@
       <script src="/socket.io/socket.io.js"></script>
   </head>
   <body>
-    <div class="container-fluid" style="border-bottom: medium solid #3476B0">
+    <div class="container-fluid" style="border-bottom: medium solid black">
         <div class="navbar-header">
           <div class="navbar-brand">Radiation Mapper</div>
         </div>
         <ul class="nav navbar-nav">
             <li><a href="/">Map</a></li>
-            <li class="active"><a href=document.URL>Detector <%= title %></a></li>
+            <li class="active"><a href=document.URL>Node <%= title %></a></li>
 	    <li><a href="about.html">About</a></li>
         </ul>
       </div>
-    <h1 id="Title" style="color:black">Detector <%= title %>= 74 degrees Fahrenheit</h1>
+    <h1 id="Title" style="color:black"><%= title %>!</h1>
     <script>
       console.log("monkeys");
 
@@ -27,12 +27,6 @@
           socket.emit('login',{user:"client"});
         }
       });
-      socket.on('data', function(data){
-	console.log("data");
-	var title = document.getElementById('title');
-	title.innerText= "Detector "+<%=title %>+" "+74 degrees Fahrenheit;
-      });
-
       socket.on('yourid', function(msg){
         socketid=msg;
         draw();

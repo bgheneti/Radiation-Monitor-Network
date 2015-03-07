@@ -9,34 +9,28 @@
     <script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js">
     </script>
-<script>
-function initialize() {
+    <script type="text/javascript">
+      function initialize() {
+	var myLatlng1 = new google.maps.LatLng(-25.363882,131.044922);
+        var myLatlng2 = new google.maps.LatLng(37.4327265,141.0275193);
+        var myLatlng3 = new google.maps.LatLng(37.4084592,141.0079499);
+        var myLatlng4 = new google.maps.LatLng(37.4080502,141.0079499);
 
-var myLatlngA = new google.maps.LatLng(37.4231, 141.0331);
-  var mapProp = {
-    center:new google.maps.LatLng(37.4217,141.03367),
-    zoom:9,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
- 
-
- var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
-
+        var mapOptions = {
+          center: { lat: 37.4217, lng: 141.03367},
+          zoom: 9
+        };
+        var map = new google.maps.Map(document.getElementById('map-canvas'),
+            mapOptions);
 var marker = new google.maps.Marker({
-    position: myLatlngA,
+    position: myLatlng,
     map: map,
-    title:"Detector 1"
-});
+    title:"Hello World!"
+	});
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
 
-google.maps.event.addListener(marker, 'click', function() {
-    window.location.href = "http://dahlia.mit.edu:1600/node/1";
-  });
-
-
-
-}
-google.maps.event.addDomListener(window, 'load', initialize);
-</script>
   </head>
   <body>
     <script src="/socket.io/socket.io.js"></script>
@@ -52,7 +46,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
     <h1 id="Title" style="color:black" align="center"><%= title %></h1>
 
 	<div id="outer" style="width:100%">  
-<div id="googleMap" style="width:1400px;height:600px; margin:auto"></div>
+	<div id="map-canvas" style="width:1600px;height:500px;margin:auto"></div>
 	</div>
        <script>
       console.log("monkeys");
